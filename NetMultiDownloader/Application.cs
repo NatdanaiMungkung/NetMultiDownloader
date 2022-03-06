@@ -4,12 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace NetMultiDownloader
 {
     internal class Application
     {
-        public async void Run()
+        public async Task Run()
         {
             StreamReader r = new StreamReader("config.json");
             string jsonString = r.ReadToEnd();

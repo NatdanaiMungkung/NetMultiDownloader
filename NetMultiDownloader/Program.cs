@@ -18,7 +18,7 @@ namespace NetMultiDownloader
         }
         static async Task Main(string[] args)
         {
-            CompositionRoot().Resolve<Application>().Run();
+            await CompositionRoot().Resolve<Application>().Run();
         }
     }
 }
