@@ -1,0 +1,10 @@
+{
+  "RetriesNo": 5,
+  "Path": "D:\\",
+  "Uris": [
+    "ftp://localhost/MD5/fitgirl-bins.md5",
+    "sftp://pinti:Pax038764269@localhost/C%3A/Users/pinti/Downloads/1.jpg",
+    "sftp://pinti:Pax038764269@localhost/C%3A/Users/pinti/Downloads/1/1.jpg",
+    "https://img-9gag-fun.9cache.com/photo/aXrLNr6_460swp.webp"
+  ]
+}
