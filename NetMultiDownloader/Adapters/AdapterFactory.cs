@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NetMultiDownloader.Adapters
 {
-    internal class AdapterFactory : IAdapterFactory
+    public class AdapterFactory : IAdapterFactory
     {
         public IDownloader GetDownloader(Uri uri)
         {

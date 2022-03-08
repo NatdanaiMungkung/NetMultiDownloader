@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace NetMultiDownloader.Adapters
 {
-    internal class FTPDownloader : IDownloader
+    public class FTPDownloader : IDownloader
     {
         public async Task<Result> DownloadAsync(Uri Uri, int retryNo, string path)
         {

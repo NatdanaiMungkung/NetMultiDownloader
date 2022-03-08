@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace NetMultiDownloader.Adapters
 {
-    internal interface IDownloader
+    public interface IDownloader
     {
         public Task<Result> DownloadAsync(Uri Uri, int retryNo, string path);
     }

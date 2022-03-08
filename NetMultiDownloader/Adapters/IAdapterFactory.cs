@@ -4,8 +4,8 @@ using System.Text;
 
 namespace NetMultiDownloader.Adapters
 {
-    internal interface IAdapterFactory
+    public interface IAdapterFactory
     {
-        IDownloader GetDownloader(Uri uri);
+        public IDownloader GetDownloader(Uri uri);
     }
 }

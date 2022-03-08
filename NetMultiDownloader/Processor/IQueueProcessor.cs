@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NetMultiDownloader
 {
-    internal interface IQueueProcessor
+    public interface IQueueProcessor
     {
         public Task<Result[]> QueueProcessAsync(Config config);
     }

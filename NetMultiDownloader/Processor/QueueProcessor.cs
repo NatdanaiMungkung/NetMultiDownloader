@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace NetMultiDownloader
 {
-    internal class QueueProcessor : IQueueProcessor
+    public class QueueProcessor : IQueueProcessor
     {
         private readonly IAdapterFactory adapterFactory;
         public QueueProcessor(IAdapterFactory adapterFactory)
@@ -20,11 +20,6 @@ namespace NetMultiDownloader
         public async Task<Result[]> QueueProcessAsync(Config config)
         {
             var distinctUri = config.Uris.Distinct();
-            for (var i = 0;i< distinctUri.Count(); i++)
-            {
-                var uriObj = new Uri(distinctUri.ElementAt(i));
-                var downloader = adapterFactory.GetDownloader(uriObj);
-            }
             var resultList = await Task.WhenAll(distinctUri.AsParallel().Select(async a =>
             {
                 var uriObj = new Uri(a);

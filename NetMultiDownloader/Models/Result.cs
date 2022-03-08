@@ -4,8 +4,13 @@ using System.Text;
 
 namespace NetMultiDownloader.Models
 {
-    internal class Result
+    public class Result
     {
+        public Result()
+        {
+            IsCompleted = true;
+            Uri = null;
+        }
         public Result(Uri uri)
         {
             IsCompleted = true;

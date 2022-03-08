@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace NetMultiDownloader.Adapters
 {
-    internal class HTTPDownloader : IDownloader
+    public class HTTPDownloader : IDownloader
     {
-        public async Task<Result> DownloadAsync(Uri uri, int retryNo, string path)
+        public virtual async Task<Result> DownloadAsync(Uri uri, int retryNo, string path)
         {
             Result rs = new Result(uri);
             var downloadOpt = new DownloadConfiguration()
@@ -18,7 +18,6 @@ namespace NetMultiDownloader.Adapters
                 ParallelDownload = true, // download parts of file as parallel or not. Default value is false
             };
             var downloader = new DownloadService(downloadOpt);
-            DirectoryInfo savePath = new DirectoryInfo(path);
             var resultFileName = FileNameHelper.GetDeDupFileName(uri);
             try
             {

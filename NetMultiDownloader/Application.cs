@@ -8,17 +8,19 @@ using System.Threading.Tasks;
 
 namespace NetMultiDownloader
 {
-    internal class Application
+    public class Application
     {
+        private IQueueProcessor processor;
+        public Application(IQueueProcessor processor)
+        {
+            this.processor = processor;
+        }
         public async Task Run()
         {
             StreamReader r = new StreamReader("config.json");
             string jsonString = r.ReadToEnd();
             models.Config config = JsonConvert.DeserializeObject<models.Config>(jsonString);
-            var adapterFactory = new AdapterFactory();
-            var quoteProcessor = new QueueProcessor(adapterFactory);
-            var result = await quoteProcessor.QueueProcessAsync(config);
-            Console.WriteLine(result);
+            await this.processor.QueueProcessAsync(config);
         }
     }
 }

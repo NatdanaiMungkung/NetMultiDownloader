@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NetMultiDownloader.Adapters
 {
-    internal class SFTPDownloader : IDownloader
+    public class SFTPDownloader : IDownloader
     {
         public Task<Result> DownloadAsync(Uri Uri, int retryNo, string path)
         {
